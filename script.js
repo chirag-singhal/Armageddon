@@ -12,7 +12,7 @@ function navigate(n){
 	}
 	if(n!=c)
 	{
-		var home = document.getElementsByClassName("home")[0];
+		var games = document.getElementsByClassName("games")[0];
 		var rules = document.getElementsByClassName("rules")[0];
 		var contacts = document.getElementsByClassName("contacts")[0];
 		var about = document.getElementsByClassName("about")[0];
@@ -27,12 +27,12 @@ function navigate(n){
 					contacts.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 				}
 				if(c == 3){
-					about.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+					games.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 				}
 				setTimeout(function(){
 				rules.style.display = "none";
 				contacts.style.display = "none";
-				about.style.display = "none";
+				games.style.display = "none";
 				}, 400);
 				setTimeout(function(){
 				about.style.display = "block";
@@ -44,16 +44,19 @@ function navigate(n){
 			case 1:
 			{
 				probcheck = 0;
+				if(c == 0){
+					about.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+				}
 				if(c == 2){
 					contacts.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 				}
 				if(c == 3){
-					about.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+					games.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 				}
 				setTimeout(function(){
 				contacts.style.display = "none";
 				about.style.display = "none";
-				developers.style.display = "none";
+				games.style.display = "none";
 				}, 400);
 				setTimeout(function(){
 				rules.style.display = "block";
@@ -65,16 +68,19 @@ function navigate(n){
 			case 2:
 			{
 				probcheck = 0;
+				if(c == 0){
+					about.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+				}
 				if(c == 1){
 					rules.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 				}
 				if(c == 3){
-					about.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+					games.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 				}
 				setTimeout(function(){
 				rules.style.display = "none";
 				about.style.display = "none";
-				developers.style.display = "none";
+				games.style.display = "none";
 				}, 400);
 				setTimeout(function(){
 				contacts.style.display = "block";
@@ -86,6 +92,9 @@ function navigate(n){
 			case 3:
 			{
 				probcheck = 0;
+				if(c == 0){
+					about.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+				}
 				if(c == 1){
 					rules.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 				}
@@ -94,12 +103,13 @@ function navigate(n){
 				}
 				setTimeout(function(){
 				rules.style.display = "none";
-				developers.style.display = "none";
+				about.style.display = "none";
 				contacts.style.display = "none";
+				games.style.display = "none";
 				}, 400);
 				setTimeout(function(){
-				about.style.display = "block";
-				about.style.animation = "openRegContainer 0.5s ease 1 forwards";
+				games.style.display = "block";
+				games.style.animation = "openRegContainer 0.5s ease 1 forwards";
 				}, 500);
 				c = 3;
 				break;
