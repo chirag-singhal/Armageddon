@@ -276,7 +276,7 @@ h5 {
     }
     .nav {
         justify-content: flex-end;
-        z-index: 45;
+        z-index: 9;
     }
     .home h1{
         margin: 0;
@@ -585,7 +585,7 @@ h5 {
     }
     .nav {
         justify-content: flex-end;
-        z-index: 45;
+        z-index: 9;
     }
     .problem{
         bottom: 0vh;
