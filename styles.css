@@ -179,9 +179,9 @@ html,body{
     color: white;
     cursor: pointer;
 }
-.contacts > p, .content h6 {
+.contacts > p {
     font-size: 3.4vh;
-    font-family: Bahnschrift;
+    font-family: 'TradeGothicLT';
     color: white;
     text-align: right;
     margin-top: -2vh;
