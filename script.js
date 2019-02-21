@@ -8,7 +8,6 @@ function navigate(n){
 			var menu = document.getElementsByClassName("links")[0];
 			document.getElementsByClassName("hamburger")[0].style.display = "block";
 		}, 480);
-		goHome();
 	}
 	if(n!=c)
 	{
