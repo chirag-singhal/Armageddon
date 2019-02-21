@@ -5,51 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Apogee Innovation Challenge</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Teko" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-    <link rel="prefetch" href="svg/ProblemStatements1.svg">
     <script src="script.js"></script>
 </head>
 <body>
     <div class="hamburger" onclick="openMenu()"></div>
     <div class="wraper">
-
-
-        <div class="prob">
-            <div class="probWraper">
-                <div class="half1">
-                    <div class="leftarrow" onclick="prevProblem()"></div>
-                    <div class="navProb">
-                        <!-- <div class="hamburger" onclick="openMenu()"></div> -->
-                        <img src="svg/left-arrow.svg" class="backButton" onclick="goHome()">
-                        <div class="heading1">
-                            <!-- <h1>ERIC</h1> -->
-                        </div>
-                    </div>
-                    <div class="content">
-                        <!-- <p>Ericsson is one of the leading brands in the field of networking and telecom headquartered in Stockholm. It offers services, software and infrastructure in IT for telecom operators, mobile and fixed broadband, operations and business support services,cable television, IPTV and video systems. It is presently working on the revolutionary 5G technology.</p> -->
-                    </div>
-                    <div class="download">
-                        <h2><a id="download_problem" href = "#" download>Download Problem Statement</a></h2>
-                    </div>
-                </div>
-                <div class="half2">
-                    <div class="rightarrow" onclick="nextProblem()"></div>
-                    <div class="heading2">
-                        <!-- <h1>SSON</h1> -->
-                    </div>
-                    <div class="logohead">
-                        <img class="main">
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="nav">
             <div class="logo"></div>
             <div class="links">
-                <img src="Web/Assets/cross.svg" class="cross" onclick="closeMenu()">
+                <img src="Web/Assets/cross.png" class="cross" onclick="closeMenu()">
                 <a href="#" class="nav-links" onclick="navigate(0)">HOME</a>
                 <a href="#" class="nav-links" onclick="navigate(3)">GAMES</a>
                 <a href="#" class="nav-links" onclick="navigate(1)">RULES</a>
@@ -99,45 +65,5 @@
             <h3 id ="regist" onclick="openReg()"><a href="#" >REGISTER</a></h3>
         </div>
     </div>
-    <div class="regContainer">
-        <div class="register">
-            <span class="closeReg" onclick="closeReg()">x</span>
-            <h5>REGISTER</h5>
-            <p>
-                (NOTE:- You have to register on the <a href="#">APOGEE HOME PAGE</a> before submitting your solutions here. Also only one team member needs to register for the whole team)
-                <br><br>
-                BITSians can register through this <a href="#">GOOGLE FORM</a>
-                <br><br>
-                <form>
-                <h4>TEAM LEADER </h4>
-                <br>
-                Email <input type="text">
-                <br><br>
-                <div class="members">
-                    <h4>MEMBERS (max 3)</h4>
-                </div>
-                <br>
-                <input type="button" class="regButton" value="Add Member" onclick="addMember()">
-                <input type="button" class="regButton" value="Remove Member" onclick="removeMember()" disabled="true">
-                <br><br><br>
-                Problem &emsp;
-                <select>
-                    <option>Select</option>
-                    <option>Reflexis Systems</option>
-                    <option>Zulip</option>
-                    <option>Ant Studio</option>
-                    <option>GE Healthcare</option>
-                    <option>Netskope</option>
-                </select>
-                <br><br>
-                Upload Solution &emsp;
-                <input type="file">
-                <br><br>
-                <input type="button" class="regButton" value="Submit">
-                </form>
-            </p>
-        </div>
-    </div>
-
 </body>
 </html>

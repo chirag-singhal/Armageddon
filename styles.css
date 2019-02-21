@@ -36,28 +36,33 @@ html,body{
     z-index: 20;
 }
 .logo{
-    width: 222px;
-    height: 65px;
+    width: 257px;
+    height: 44px;
     background: url("Web/Assets/apogeelogo\(1\).png");
     background-size: cover;
-    margin: 3vh 5vh;
+    margin: 3.5vh 5vh;
     z-index: 10;
 }
 .links{
     margin: 5vh 2vw;
-    font-family: 'RobotoCondensed-Bold', Roboto;
+    font-family: 'TradeGothicLT', sans-serif;
     font-size: 1.4rem;
     display: flex;
     font-weight: 550;
     flex-wrap: nowrap;
     z-index: 60;
+    transition: 0.5s;
 }
 .nav-links{
     text-decoration: none;
     height: 25px;
     line-height: 25px;
-    color: black;
-    padding: 5px 2vw;
+    color: white;
+    padding: 5px 0;
+    margin: 0 2vw;
+}
+.links :hover{
+    border-bottom: 2px solid white;
 }
 .links :nth-child(6){
     color: white;
@@ -78,10 +83,6 @@ html,body{
     transform-origin: 100% 65%;
     /* animation: spin 120s infinite linear; */
 }
-/* @keyframes spin{
-    0%{transform: rotate(0deg);}
-    100%{transform: rotate(360deg);}
-} */
 .home {
     width: 100vw;
     height: 100vh;
@@ -113,29 +114,15 @@ html,body{
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    font-family: 'RobotoCondensed-Bold', Roboto;
+    font-family: 'TradeGothicLTBold', TradeGothicLT;
     font-size: 1.4rem;
     overflow: hidden;
-}
-#viewprob{
-    background: linear-gradient(to bottom, #6eeed7 0%, #6CF1E4 100%);
-    padding: 1.6vh 2vw;
-    font-size: 1.6vw;
-    border-radius: 50px / 45px;
-    cursor: pointer;
-    font-weight: bold;
-    /* box-shadow: rgba(34, 255, 225, 0.3) 0 0 14px 6px; */
 }
 #regist{
     display: none;
     cursor: pointer;
     text-align: center;
     font-weight: bold;
-    /* box-shadow: rgba(34, 255, 225, 0.3)) 0 0 14px 6px; */
-}
-#viewprob a{
-    text-decoration: none;
-    color: white;
 }
 #regist a{
     text-decoration: none;
@@ -155,15 +142,6 @@ html,body{
 .rules a {
     color: white;
 }
-/* .contacts h3 {
-    font-size: 7vh;
-    text-align: center;
-    font-family: Bahnschrift;
-    color: #ffffff;
-    font-weight: 500;
-    margin: 7vh;
-    margin-top: 5vh;
-}  */
 .container {
     width: 58vw;
     height: 100vh;
@@ -187,18 +165,11 @@ html,body{
 .about {
     opacity: 1;
 }
-.rules > ol > li, .about p, .rules p {
+.about p, .rules p {
     font-size: 3vh;
     font-family: 'TradeGothicLT', sans-serif;
     color: #ffffff;
 }
-/* .contacts {
-    opacity: 0;
-    width: 80vw;
-    margin: 0 10vw;
-    position: absolute;
-    top: 8vh;
-} */
 .contacts > p > a {
     text-decoration: none;
     color: white;
@@ -211,56 +182,12 @@ html,body{
     text-align: right;
     margin-top: -2vh;
 }
-.regContainer {
-    display: none;
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(0, 0, 0, 0.9);
-    left: 0;
-    z-index: 40;
-    opacity: 0;
-    transition: 1s;
-}
-.register {
-    width: 40vw;
-    height: 80vh;
-    margin: 8vh 25vw;
-    padding: 2vh 5vw;
-    background-color: #fff;
-    overflow-y: scroll;
-    transform: translateY(-50%);
-    transition: 1s;
-}
-.register > p {
-    font-size: 2vh;
-    font-family: Bahnschrift;
-    color: #565656;
-    text-align: center;
-}
-form {
-    font-size: 1.5vh;
-    font-family: Bahnschrift;
-    color: #565656;
-    text-align: center;
-}
 h4 {
     font-size: 2vh;
     font-family: Bahnschrift;
     color: #565656;
     font-weight: 500;
     margin: 0;
-}
-.regButton {
-    font-size: 2vh;
-    padding: 7px 20px;
-    background: #63ddc9;
-    border-radius: 50px / 45px;
-    cursor: pointer;
-}
-.regButton:nth-of-type(3) {
-    opacity: 0.5;
 }
 h5 {
     font-size: 3.5vh;
@@ -270,59 +197,14 @@ h5 {
     font-weight: 500;
     margin: 3vh;
 }
-.closeReg {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-family: sans-serif;
-    cursor: pointer;
-    color: grey;
-    font-size: 1.5rem;
-}
-.closeReg:hover {
-    color: #565656;
-}
-.prob {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 40;
-    transform: translateX(100vw);
-    overflow: hidden;
-}
 .hamburger{
     display: none;
-}
-.backButton {
-    height: 75px;
-    width: 50px;
-    margin: 20px 50px;
-    cursor: pointer;
 }
 .cross {
     width: 30px;
     height: 30px;
     cursor: pointer;
     display: none;
-}
-.dev {
-    width: 20vw;
-    margin: 0;
-    text-align: center;
-}
-.dev > img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    border: solid 10px #2dc9af;
-}
-@media all and (max-width: 1500px){
-    .rules > ol > li {
-        font-size: 2.5vh;
-        padding: 0;
-    }
 }
 
 @media all and (max-width: 1000px){
@@ -338,16 +220,12 @@ h5 {
     h3 {
         font-size: 7vh;
     }
-    .rules > ol > li, .about p {
+    .about p, .rules p {
         font-size: 2.5vh;
         padding: 0;
     }
-    .contacts > p, .content h6 {
+    .contacts > p {
         font-size: 2.8vh;
-    }
-    .dev > img {
-        width: 200px;
-        height: 200px;
     }
 }
 
@@ -359,7 +237,6 @@ h5 {
     .links {
         font-size: 1.1rem;
     }
-
     .logo{
         width: 130px;
         height: 24px;
@@ -370,22 +247,17 @@ h5 {
     h3 {
         font-size: 6vh;
     }
-    .rules > ol > li, .about p {
+    .rules p, .about p {
         font-size: 1.8vh;
         padding: 0;
     }
-    .contacts > p, .content h6 {
+    .contacts > p {
         font-size: 2.3vh;
-    }
-    .dev > img {
-        width: 150px;
-        height: 150px;
-        border-width: 7px;
     }
 }
 
 
-@media all and (max-width: 700px){
+@media all and (max-width: 1024px) and (orientation : portrait){
     .home{
         width: 100vw;
         height: 70vh;
@@ -397,9 +269,6 @@ h5 {
         justify-content: flex-end;
         z-index: 45;
     }
-    .circle{
-        display: none;
-    }
     .home h1{
         margin: 0;
         width: 80vw;
@@ -408,25 +277,10 @@ h5 {
         padding: 0 8vw;
         text-align: center;
     }
-    .backButton{
-        display: none;
-    }
-    #viewprob{
-        background: linear-gradient(to bottom, #6eeed7 0%, #6CF1E4 100%);
-        width: 70vw;
-        font-weight: bold;
-        margin: 7vh;
-        color: white;
-        margin-top: 3vh;
-        padding: 2vh 2vw;
-        font-size: 4vw;
-        text-align: center;
-        border-radius: 50px / 45px;
-    }
     #regist{
         display: inline;
         width: 40vw;
-        margin-bottom: 0;
+        margin-bottom: 4vh;
         color: white;
         font-size: 4vw;
         padding: 1.5vh 1.5vw;
@@ -472,7 +326,7 @@ h5 {
         align-items: center;
         width: 87vw;
         height: 100vh;
-        background-color: black;
+        background-color: #ff9000;
         transform: translateX(-100vw);
         transition: 0.4s cubic-bezier(.06,.54,.26,.9);
     }
@@ -506,10 +360,7 @@ h5 {
         height: 6vh;
         margin: 2vh;
     }
-    .rules > ol {
-        margin-top: -2vh;
-    }
-    .rules > ol > li, .about p{
+    .rules p, .about p{
         padding: 0 3vw;
     }
     .container{
@@ -574,170 +425,12 @@ h5 {
     }
 }
 
-
-
-
-
-
-
-.probWraper{
-    background: url("svg/ProblemStatements1.svg");
-    background-size: cover;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    z-index: 5;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-.half1{
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-.half2{
-    width: 50vw;
-    height: 100vh;
-}
-.navProb{
-    height: 20vh;
-    width: 50vw;
-    display: flex;
-    justify-content: space-between;
-    z-index: 20;
-}
-.heading1 {
-    white-space: nowrap;
-}
-.heading2 {
-    white-space: nowrap;
-}
-.heading1 h1{
-    font-family: Bahnschrift;
-    color: #2dc9af;
-    margin: 2vh;
-    font-size: 7rem;
-    font-weight: 500;
-    margin-right: 3px;
-    margin-left: 0;
-}
-.content{
-    position: absolute;
-    width: 50vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.content p, .content h6 {
-    color: #2e394c;
-    font-size: 1.7rem;
-    padding: 0 8vw;
-    margin: 0;
-    font-family: Bahnschrift;
-    max-height: 50vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-.heading2 h1{
-    font-family: Bahnschrift;
-    color: white;
-    margin: 2vh;
-    font-size: 7rem;
-    font-weight: 500;
-    margin-left: 3px;
-    margin-right: 0;
-}
-.logohead{
-    position: absolute;
-    top: 0;
-    height: 100vh;
-    width: 50vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.main{
-    width: 480px;
-    height: 480px;
-    margin: 0;
-    padding: 0;
-}
-.download{
-    position: absolute;
-    bottom: 10vh;
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    font-family: 'RobotoCondensed-Bold', Roboto;
-    font-size: 1.1vw;
-}
-.hamburger{
-    display: none;
-}
-.download h2{
-    background: linear-gradient(to bottom, #6eeed7 0%, #6CF1E4 100%);
-    padding: 2vh 2vw;
-    border-radius: 50px / 45px;
-    cursor: pointer;
-}
-.download h2 a{
-    text-decoration: none;
-    color: white;
-}
-.leftarrow{
-    height: 52px;
-    width: 30px;
-    background: url("svg/path.svg");
-    background-size: cover;
-    position: absolute;
-    top: 50vh;
-    transform: translateY(-50%);
-    left: 0.5vw;
-    z-index: 50;
-    cursor: pointer;
-}
-.rightarrow{
-    height: 52px;
-    width: 31px;
-    background: url("svg/path-1.svg");
-    background-size: cover;
-    position: absolute;
-    top: 50vh;
-    transform: translateY(-50%);
-    right: 1.5vw;
-    z-index: 50;
-    cursor: pointer;
-}
-
-
-@media all and (max-width:1600px){
-    .heading1 h1, .heading2 h1 {
-        font-size: 6rem;
-    }
-}
-
-
 @media all and (max-width:1450px){
-    .heading1 h1, .heading2 h1 {
-        font-size: 5rem;
-    }
     .rules p, .about p{
         font-size: 2.8vh;
     }
     .contacts p{
         font-size: 3.2vh;
-    }
-    .content p{
-        font-size: 1.3rem;
-    }
-    .main{
-        max-height: 40vh;
-        max-width: 30vw;;
     }
     .links{
         font-size: 1.3rem;
@@ -746,24 +439,13 @@ h5 {
 
 
 @media all and (max-width:1250px){
-    .heading1 h1, .heading2 h1 {
-        font-size: 4rem;
-        margin-top: 5vh;
-    }
-    .main {
-        width: auto;
-        height: 450px;
-    }
     .links{
         font-size: 1.1rem;
     }
     .logo{
-        width: 135px;
+        width: 224px;
         height: 39px;
         margin: 4vh 5vh;
-    }
-    .content p{
-        font-size: 1.2rem;
     }
     .rules p, .about p{
         font-size: 2.6vh;
@@ -771,160 +453,22 @@ h5 {
     .contacts p{
         font-size: 3vh;
     }
-
-    .main{
-        height: 350px;
-        width: auto;
-    }
 }
 
 @media all and (max-width: 1000px){
     .logo{
-        width: 190px;
-        height: 33px;
+        width: 170px;
+        height: 29px;
     }
     .links{
         font-size: 0.9rem;
     }
 }
 
-@media all and (max-width:1150px){
-    .heading1 h1, .heading2 h1 {
-        font-size: 3.5rem;
-        margin-top: 5vh;
-    }
-    .main {
-        width: auto;
-        height: 350px;
-    }
-    .content p, .content h6{
-        font-size: 1.5rem;
-    }
-}
-
-
-@media all and (max-width:1150px){
-    .heading1 h1, .heading2 h1 {
-        font-size: 3rem;
-        margin-top: 4vh;
-    }
-    .content p{
-        font-size: 1.1rem;
-    }
-    .download{
-        bottom: 4vh;
-    }
-    .main{
-        max-height: 40vh;
-        max-width: 30vw;;
-    }
-}
-
-
-@media all and (max-width:850px){
-    .heading1 h1, .heading2 h1 {
-        font-size: 2.5rem;
-        margin-top: 4vh;
-    }
-    .main {
-        width: auto;
-        height: 270px;
-    }
-    .content p{
-        font-size: 1rem;
-    }
-}
-
-
-@media all and (max-width: 700px) and (orientation : portrait){
-    .probWraper{
-        background-size: cover;
-    }
-    .problem{
-        bottom: 0;
-        height: 22vh;
-        justify-content: flex-start;
-    }
-    .content{
-        position: relative;
-        height: 80vh;
-        width: 86vw;
-        background: #38b49f;
-        margin-left: 7vw;
-        margin-top: 7vh;
-        overflow: scroll;
-    }
+@media all and (max-width: 1024px) and (orientation : portrait){
     .cross{
         height: 20px;
         width: 20px;
-    }
-    .content h6 {
-        margin-top: 10vh;
-        font-size: 5vw;
-    }
-    .content p{
-        font-size: 5vw;
-        color: #a6e6e1;
-        height: 40vh;
-        padding-left: 10vw;
-        padding-right: 5vw;
-        overflow: scroll;
-    }
-    .heading1{
-        width: 50vw;
-        display: flex;
-        justify-content: flex-end;
-        position: absolute;
-        top: 28vh;
-        left: 0;
-    }
-    .heading2{
-        width: 50vw;
-        position: absolute;
-        display: flex;
-        justify-content: flex-start;
-        top: 28vh;
-        left: 48.2vw;
-    }
-    .heading1 h1{
-        font-size: 8vw;
-        color: white;
-    }
-    .heading2 h1{
-        font-size: 8vw;
-        color: white;
-    }
-    .half1, .half2{
-        position: absolute;
-        width: 100vw;
-    }
-    .half2 {
-        height: 30vh;
-    }
-    .logohead{
-        position: absolute;
-        top: 12vh;
-        left: 0;
-        width: 100vw;
-        height: 100px;
-        display: flex;
-        justify-content: center;
-    }
-    .rightarrow{
-        left: 94vw;
-        width: 18px;
-        height: 30px;
-        top: 57vh;
-    }
-    .leftarrow{
-        width: 18px;
-        height: 30px;
-        top: 57vh;
-    }
-    .navProb{
-        width: 100vw;
-        height: 10vh;
-        justify-content: flex-end;
     }
     .hamburger{
         display: block;
@@ -937,7 +481,7 @@ h5 {
     .rules, .about, .contacts{
         width: 80vw;
         padding: 0 5vw;
-        margin-top: 28vh;
+        margin-top: 27vh;
         text-align: left;
     }
     .contacts h3, .rules h3, .about h3 {
@@ -946,31 +490,15 @@ h5 {
         font-size: 10vw;
         margin-bottom: 2vh;
     }
-    .main {
-        height: 120px;
-        width: auto;
-        max-width: 60vw;
-        margin: 0;
-        padding: 0;
-    }
-    .download{
-        width: 100vw;
-        bottom: 5vh;
-        text-align: center;
-    }
-    .download h2{
-        background: #358e88;
-        width: 70vw;
-        font-size: 4vw;
-    }
     .links{
         font-size: 1.6em;
         transition: 0.5s;
         transition-timing-function: cubic-bezier(.06,.54,.26,.9);
     }
     .rules p, .about p, .contacts p{
-        font-size: 2vh;
+        font-size: 1.9vh;
         height: 50vh;
+        margin-top: 2.5vh;
         padding: 0 5vw;
         text-align: center;
     }
@@ -978,7 +506,7 @@ h5 {
         font-size: 2.4vh;
     }
     .logo{
-        margin-top: 2.5vh;
+        margin-top: 3.5vh;
     }
 }
 @keyframes openReg {
@@ -1040,51 +568,31 @@ h5 {
 @media screen and (max-width: 900px) and (min-width:500px) and (orientation: landscape){
     .home{
         width: 100vw;
-        height: 80vh;
+        height: 100vh;
         display: flex;
         justify-content: center;
         margin-top: 15vh;
+        z-index: 1;
     }
     .nav {
         justify-content: flex-end;
         z-index: 45;
-    }
-    .download{
-        bottom: 0vh;
     }
     .problem{
         bottom: 0vh;
     }
     .home h1{
         margin: 0;
-        width: 80vw;
+        width: 90vw;
         font-size: 2.8rem;
         padding: 0;
-        text-align: center;
-    }
-    .main{
-        height: 50vh;
-        width: auto;
-    }
-    .backButton{
-        display: none;
-    }
-    #viewprob{
-        background: linear-gradient(to bottom, #6eeed7 0%, #6CF1E4 100%);
-        width: 70vw;
-        font-weight: bold;
-        margin: 7vh;
-        color: white;
-        margin-top: 3vh;
-        padding: 2vh 2vw;
-        font-size: 4vw;
-        text-align: center;
-        border-radius: 50px / 45px;
+        font-size: 6vw;
+        text-align: right;
     }
     #regist{
         display: none;
         width: 40vw;
-        margin-bottom: 0;
+        margin-bottom: 4vh;
         color: white;
         font-size: 4vw;
         font-weight: bold;
@@ -1099,21 +607,16 @@ h5 {
     }
     .hamburger{
         display: block;
-        height: 50px;
-        width: 10vw;
+        height: 68px;
+        width: 75px;
         margin: 0 3vw;
-        transform: scale(0.4);
-        background: url("Mobile/Assets/Menu.png") no-repeat;
+        transform: scale(0.3);
+        background: url(Mobile/Assets/Menu.png) no-repeat;
         cursor: pointer;
         position: absolute;
-        top: 0;
+        top: -12px;
         left: 0;
         z-index: 10;
-    }
-    .register{
-        width: 90vw;
-        margin: 8vh 1vw;
-        padding: 3vh 4vw;
     }
     .links{
         position: absolute;
@@ -1126,7 +629,7 @@ h5 {
         align-items: center;
         width: 40vw;
         height: 100vh;
-        background-color: #63ddc9;
+        background-color: #ff9000;
         transform: translateX(-100vw);
         transition: 0.5s;
         transition-timing-function: cubic-bezier(.06,.54,.26,.9);
@@ -1149,33 +652,16 @@ h5 {
         height: 20px;
         width: 20px;
     }
-    .circle{
-        display: block;
-    }
-    .home{
-        height: 100vh;
-    }
     .logo{
         height: 29px;
         width: 170px;
-        margin: 2vh 5vh;
+        margin: 3vh 5vh;
     }
     .hamburger{
-        transform: scale(0.7);
-        margin: 0;
-    }
-    .home h1{
-        font-size: 6vw;
-        width: 50vw;
-        margin-left: -40vw;
-        text-align: left;
+        margin: 0.5vh;
     }
     #regist{
         width: 15vw;
-        font-size: 2vw;
-    }
-    #viewprob{
-        width: 30vw;
         font-size: 2vw;
     }
     .problem{
@@ -1184,29 +670,15 @@ h5 {
     .links :nth-child(2){
         margin-top: 15vh;
     }
-    .leftarrow,.rightarrow{
-        height: 22px;
-        width: 13px;
-    }
-    .prob{
-        z-index: 50;
-    }
-    .navProb{
-        justify-content: flex-end;
-    }
     .register{
         width: 50vw;
         margin-left: 21vw;
     }
-    .content p{
-        height: 40vh;
-        font-size: 0.8em;
-        margin-top: 2vh;
-    }
-    .content h6{
-        font-size: 1.2em;
-    }
     .rules p{
-        font-size: 0.5em;
+        font-size: 0.6em;
+    }
+    .links :nth-child(6){
+        border: none;
+        padding: 3vh;
     }
 }
