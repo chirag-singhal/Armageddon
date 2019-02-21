@@ -139,3 +139,7 @@ function closeMenu(){
 		document.getElementsByClassName("hamburger")[0].style.display = "block";
 	}, 150);
 }
+
+window.onload = function(){
+	document.getElementsByClassName('gradient')[0].style.display = "none";
+}

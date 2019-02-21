@@ -22,8 +22,16 @@ html,body{
     background-size: cover;
     display: flex;
     flex-direction: column;
-    z-index: 5;
     position: relative;
+}
+.gradient {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(#ff870e 0%, #c6682d 100%);
+    z-index: 5;
 }
 .register p a{
     color: #2dc9af;
@@ -97,7 +105,7 @@ html,body{
     font-family: Teko-Regular, Teko;
     font-weight: 100;
     margin-left: 5vw;
-    z-index: 1;
+    z-index: 7;
 }
 .rules p a{
     color: #2dc9af;
@@ -155,7 +163,7 @@ html,body{
     right: 0vw;
     margin: 30vh 5vw;
     color: white;
-    z-index: 1;
+    z-index: 7;
     text-align: right;
     height: 70vh;
 }
@@ -264,7 +272,7 @@ h5 {
         height: 70vh;
         margin: 18vh 0vw;
         display: flex;
-        z-index: 1;
+        z-index: 7;
     }
     .nav {
         justify-content: flex-end;
@@ -573,7 +581,7 @@ h5 {
         display: flex;
         justify-content: center;
         margin-top: 15vh;
-        z-index: 1;
+        z-index: 7;
     }
     .nav {
         justify-content: flex-end;
