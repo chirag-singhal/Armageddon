@@ -71,7 +71,7 @@ html,body{
 }
 .links :nth-child(6){
     color: white;
-    border-radius: 27px / 21px;
+    border-radius: 22px / 20px;
     border: 3px solid;
     border-color: white;
     padding: 4px 15px;
@@ -135,7 +135,7 @@ html,body{
 }
 .rules h3, .games h3, .about h3, .contacts h3 {
     font-size: 7vh;
-    width: 41vw;
+    width: 40vw;
     height: 10vh;
     text-align: right;
     font-family: 'TradeGothicLTBold';
@@ -303,7 +303,7 @@ h5 {
     .logo{
         height: 35px;
         width: 120px;
-        margin: 2vh 5vh;
+        margin: 2vh 10vw;
     }
     .hamburger{
         display: block;
@@ -516,6 +516,7 @@ h5 {
         font-size: 2.4vh;
     }
     .logo{
+        margin: 2vh 10vw;
         margin-top: 3.5vh;
     }
 }
