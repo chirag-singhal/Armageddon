@@ -294,7 +294,7 @@ function addMember(){
 			txtBox.blur();
 			txtBox.classList.add('bitsians');
 			txtBox.setAttribute("type", "text");
-			txtBox.required = true;
+			// txtBox.required = true;
 			child.appendChild(txtBox);
 			parent.appendChild(child)
 			parent.appendChild(document.createElement("br"));
@@ -331,7 +331,7 @@ function addNonBitsianMember(){
 			var txtBox = document.createElement("input");
 			txtBox.blur();
 			txtBox.classList.add('non_names');
-			txtBox.required = true;
+			// txtBox.required = true;
 			txtBox.setAttribute("type", "text");
 			div.appendChild(txtBox);
 			div.appendChild(document.createElement("br"));
@@ -344,7 +344,7 @@ function addNonBitsianMember(){
 			txtBox.blur();
 			txtBox.classList.add('nb_emails');
 			txtBox.setAttribute("type", "text");
-			txtBox.required = true;
+			// txtBox.required = true;
 			div.appendChild(txtBox);
 			div.appendChild(document.createElement("br"));
 			child.appendChild(div);
@@ -354,7 +354,7 @@ function addNonBitsianMember(){
 			div.innerHTML += "&emsp;";
 			var select = document.createElement("select");
 			select.classList.add('nb_gender');
-			select.required = true;
+			// select.required = true;
 			var option6 = document.createElement('option');
 			option6.value = 'Select';
 			option6.innerHTML = 'Select';
@@ -376,7 +376,7 @@ function addNonBitsianMember(){
 			div.innerHTML += "&emsp;";
 			var select = document.createElement("select");
 			select.classList.add('nb_yos');
-			select.required = true;
+			// select.required = true;
 			var option6 = document.createElement('option');
 			option6.value = 'Select';
 			option6.innerHTML = 'Select';
