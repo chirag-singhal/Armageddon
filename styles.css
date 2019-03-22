@@ -704,7 +704,7 @@ h5 {
         opacity: 0;
     }
 }
-@media screen and (max-width: 900px) and (min-width:500px) and (orientation: landscape){
+@media only screen and (max-width: 900px) and (min-width:500px) and (orientation: landscape){
     .home{
         width: 100vw;
         height: 100vh;
