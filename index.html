@@ -21,7 +21,7 @@
                 <a href="#" class="nav-links" onclick="navigate(3)">GAMES</a>
                 <a href="#" class="nav-links" onclick="navigate(1)">RULES</a>
                 <a href="#" class="nav-links" onclick="navigate(2)">CONTACT</a>
-                <a href="#" class="nav-links" onclick="openReg()">REGISTER</a>
+                <a href="#" class="nav-links" onclick="navigate(4)">REGISTER</a>
             </div>
         </div>
         <div class="home">
@@ -71,10 +71,64 @@
                 Phone : <a href="tel:+91 7017173235">+91 7017173235</a>, <a href="tel:+91 8521689444">+91 8521689444</a>
             </p>
         </div>
+        <div class="register">
+            <h3>REGISTER</h3>
+            <br>
+            <form>
+                <div class="gameinfo">
+                    <div class="name">
+                        TEAM NAME &emsp;
+                        <input type="text" class="value" name="team_name" required>
+                        <br><br>
+                    </div>
+                    <div class="name">
+                        Game &emsp;
+                        <select required class="value" name="game">
+                            <option>Select</option>
+                            <option>CS GO</option>
+                            <option>FIFA 18</option>
+                            <option>FIFA 19</option>
+                            <option>CS GO</option>
+                            <option>CRICKET 07</option>
+                        </select>
+                        <br><br>
+                    </div>
+                    <!-- <input type="button" class="regButton" value="Submit" id="submit" onclick="gameinfo()"> -->
+                    <div class="center">
+                        <div class="submit" onclick="gameinfo()">SUBMIT</div>
+                    </div>
+                    <br>
+                    <br><br>
+                </div>
+                <div class="members">
+                    <h2 id="max">MEMBERS ( Max </h2>
+                    <div class="buttons">
+                        <div class="add_bitsian button regButton" onclick="addMember()">Add Bitsian</div>
+                        <div class="add_non_bitsian button regButton" id="remove" onclick="addNonBitsianMember()" >Add Non-Bitsian</div>
+                        <div class="remove_member button regButton" onclick="removeMember()">Remove Member</div>
+                        <!-- <input type="button" class="regButton" value="Add Member" onclick="addMember()">
+                        <input type="button" class="regButton" value="Remove Member" id="remove" onclick="removeMember()" disabled="true">
+                        <input type="button" class="regButton" value="Add Non-Bitsian Member" onclick="addNonBitsianMember()"> -->
+                        <br><br>
+                    </div>
+                    <div class="bitsian"></div>
+                    <div class="non_bitsian"></div>
+                    <br>
+                    
+                    <div class="center">
+                        <div class="registerbutton" onclick="register()">REGISTER</div>
+                    </div>
+                    <!-- <input type="button" id="submit" value="Register" onclick="register()"> -->
+                </div>
+                <div class="thanks"><p>Thank You for registering !!!</p></div>
+            </form>
+        </div>
+
         <div class="container"></div>
         <div class="problem">
-            <h3 id ="regist" onclick="openReg()"><a href="#" >REGISTER</a></h3>
+            <h3 id ="regist" onclick="navigate(4)"><a href="#" >REGISTER</a></h3>
         </div>
     </div>
+
 </body>
 </html>
