@@ -40,7 +40,7 @@ html,body{
     top: 0;
     left: 0;
     background-image: linear-gradient(#ff870e 0%, #c6682d 100%);
-    z-index: 5;
+    z-index: 0;
 }
 .nav{
     height: 10vh;
@@ -704,7 +704,7 @@ h5 {
         opacity: 0;
     }
 }
-@media only screen and (max-width: 900px) and (min-width:500px) and (orientation: landscape){
+@media screen and (max-width: 900px) and (min-width:500px) and (orientation: landscape){
     .home{
         width: 100vw;
         height: 100vh;
