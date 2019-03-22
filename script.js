@@ -1,7 +1,5 @@
 var n, c = 0;
 
-document.getElementsByClassName('value')[0].blur();
-
 function navigate(n){
 	if(hamCheck == 0)
 	{
