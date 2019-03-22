@@ -1,4 +1,7 @@
 var n, c = 0;
+
+document.getElementsByClassName('value')[0].blur();
+
 function navigate(n){
 	if(hamCheck == 0)
 	{
@@ -290,6 +293,7 @@ function addMember(){
 			child.appendChild(document.createTextNode("Email "));
 			child.innerHTML += "&emsp;";
 			var txtBox = document.createElement("input");
+			txtBox.blur();
 			txtBox.classList.add('bitsians');
 			txtBox.setAttribute("type", "text");
 			txtBox.required = true;
@@ -327,6 +331,7 @@ function addNonBitsianMember(){
 			div.appendChild(document.createTextNode("Name "));
 			div.innerHTML += "&emsp;";
 			var txtBox = document.createElement("input");
+			txtBox.blur();
 			txtBox.classList.add('non_names');
 			txtBox.required = true;
 			txtBox.setAttribute("type", "text");
@@ -338,6 +343,7 @@ function addNonBitsianMember(){
 			div.appendChild(document.createTextNode("Email "));
 			div.innerHTML += "&emsp;";
 			var txtBox = document.createElement("input");
+			txtBox.blur();
 			txtBox.classList.add('nb_emails');
 			txtBox.setAttribute("type", "text");
 			txtBox.required = true;
