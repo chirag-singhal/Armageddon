@@ -77,28 +77,32 @@
             <form>
                 <div class="gameinfo">
                     <div class="name">
-                        TEAM NAME &emsp;
-                        <input type="text" class="value" name="team_name">
-                        <br><br>
+                        <div>
+                            TEAM NAME &emsp;
+                        </div>
+                        <div>
+                            Game &emsp;
+                        </div>
                     </div>
                     <div class="name">
-                        Game &emsp;
-                        <select class="value" name="game">
-                            <option>Select</option>
-                            <option>CS GO</option>
-                            <option>FIFA 18</option>
-                            <option>FIFA 19</option>
-                            <option>CS GO</option>
-                            <option>CRICKET 07</option>
-                        </select>
+                            <input type="text" class="value" name="team_name">
+                            <br>
+                            <select class="value" name="game">
+                                <option>Select</option>
+                                <option>CS GO</option>
+                                <option>FIFA 18</option>
+                                <option>FIFA 19</option>
+                                <option>CS GO</option>
+                                <option>CRICKET 07</option>
+                            </select>
                         <br><br>
                     </div>
                     <!-- <input type="button" class="regButton" value="Submit" id="submit" onclick="gameinfo()"> -->
-                    <div class="center">
-                        <div class="submit" onclick="gameinfo()">SUBMIT</div>
-                    </div>
                     <br>
                     <br><br>
+                </div>
+                <div class="center" id="submits">
+                    <div class="submit" onclick="gameinfo()">SUBMIT</div>
                 </div>
                 <div class="members">
                     <h2 id="max">MEMBERS ( Max </h2>
@@ -109,8 +113,8 @@
                         <!-- <input type="button" class="regButton" value="Add Member" onclick="addMember()">
                         <input type="button" class="regButton" value="Remove Member" id="remove" onclick="removeMember()" disabled="true">
                         <input type="button" class="regButton" value="Add Non-Bitsian Member" onclick="addNonBitsianMember()"> -->
-                        <br><br>
                     </div>
+                    <br><br>
                     <div class="bitsian"></div>
                     <div class="non_bitsian"></div>
                     <br>
