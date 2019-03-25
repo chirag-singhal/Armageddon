@@ -271,7 +271,7 @@ function gameinfo(){
 	}
 }
 
-var x=0;max
+var x=0;
 function addMember(){
 	if(x < games.no_of_participants)
 	{
