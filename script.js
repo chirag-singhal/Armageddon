@@ -213,7 +213,7 @@ var games = {"games" : [
 	{
 		"id": "1",
 		"name": "CS GO",
-		"no_of_participants":"4",
+		"no_of_participants":"2",
 		"description": ""
 	}
 ]};
@@ -232,20 +232,24 @@ function gameinfo(){
 		var members = document.getElementsByClassName('members')[0];
 		gameinfo.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 		document.getElementById('submits').style.animation = "closeRegContainer 0.5s ease 1 forwards";
-		// var info = new XMLHttpRequest();
-		// info.setRequestHeader('Content-Type: application/json');
-		// info.onreadystatechange = function() {
-		// 	if (this.readyState == 4 && this.status == 200) {
-		// 	 games = JSON.parse(this.responseText);
-		// 	}
-		//   };
-		// info.open("GET", "/get_games", true);
-		// info.send();
+		var info = new XMLHttpRequest();
+		info.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			 games = JSON.parse(this.responseText);
+			 games = games.games;
+			 console.log(games);
+			}
+		  };
+		info.open("GET", "http://test.bits-apogee.org/2019/arma/get_games", false);
+		info.setRequestHeader('Content-Type','application/json');
+		info.send();
 		console.log(game_name);
 		games.forEach(element => {
+			console.log(element.name);
 			if(game_name == element.name){
 				game_id = element.id;
 				games = element;
+				console.log(games);
 				// break;
 				console.log(games);
 			}
@@ -260,8 +264,8 @@ function gameinfo(){
 		setTimeout(() => {
 			members.style.display = "block";
 			var max = document.getElementById('max');
-			max.innerHTML += "5 )"
-			// max.innerHTML += games.no_of_participants+ " )";
+			// max.innerHTML += "5 )"
+			max.innerHTML += games.no_of_participants+ " )";
 			members.style.animation = "openRegContainer 0.5s ease 1 forwards";
 		}, 500);
 	}
@@ -511,16 +515,18 @@ function register(){
 		var non_bitsian_emails = document.getElementsByClassName('nb_emails');
 		var non_bitsian_gender = document.getElementsByClassName('nb_gender');
 		var non_bitsian_yos = document.getElementsByClassName('nb_yos');
-		for(let i = 0; i < bitsian.length; i++){
-			var bitsian_member = {};
+			// regist['team_members_bitsians'] = [];
+			var bitsian_member = [];
+			for(let i = 0; i < bitsian.length; i++){
 			if(bitsian[i].value.trim().length == 0)
 			{
 				check = 0;
 			}
-			bitsian_member['email_id'] = bitsian[i].value;
-			regist['team_members_bitsians'].push(bitsian_member);
+			bitsian_member[i] = bitsian[i].value;
 		}
+		regist['team_members_bitsians'] = bitsian_member;
 		console.log(non_bitsian_names.length);
+		regist['team_members_non_bitsians'] = [];
 		for(let j = 0; j < non_bitsian_names.length; j++)
 		{
 			console.log(j);
@@ -539,10 +545,17 @@ function register(){
 
 			members.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 			console.log(regist);
-			// var register = new XMLHttpRequest();
-			// register.setRequestHeader('Content-Type: application/json');
-			// register.open("POST", "/arma/register_team", true);
-			// register.send(JSON.stringify(team));
+			var register = new XMLHttpRequest();
+			register.onreadystatechange =function(){
+				if(register.status != 200){
+					var message = JSON.parse(register.responseText);
+					console.log(message);
+					document.getElementById('message').innerHTML = message.message;
+				}
+			}
+			register.open('POST', "http://test.bits-apogee.org/2019/arma/register_team", false);
+			register.setRequestHeader('Content-Type','application/json');
+			register.send(JSON.stringify(regist));
 			setTimeout(() => {
 				members.style.display = "none";
 			}, 400);

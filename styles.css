@@ -222,7 +222,7 @@ select{
 }
 .rules h3, .games h3, .about h3, .contacts h3, .register h3 {
     font-size: 7vh;
-    width: 40vw;
+    width: 41vw;
     height: 10vh;
     text-align: right;
     font-family: 'TradeGothicLTBold';
