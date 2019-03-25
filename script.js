@@ -240,7 +240,7 @@ function gameinfo(){
 			 console.log(games);
 			}
 		  };
-		info.open("GET", "http://test.bits-apogee.org/2019/arma/get_games", false);
+		info.open("GET", "https://bits-apogee.org/2019/arma/get_games", false);
 		info.setRequestHeader('Content-Type','application/json');
 		info.send();
 		console.log(game_name);
@@ -271,7 +271,7 @@ function gameinfo(){
 	}
 }
 
-var x=0;
+var x=0;max
 function addMember(){
 	if(x < games.no_of_participants)
 	{
@@ -553,7 +553,7 @@ function register(){
 					document.getElementById('message').innerHTML = message.message;
 				}
 			}
-			register.open('POST', "http://test.bits-apogee.org/2019/arma/register_team", false);
+			register.open('POST', "https://bits-apogee.org/2019/arma/register_team", false);
 			register.setRequestHeader('Content-Type','application/json');
 			register.send(JSON.stringify(regist));
 			setTimeout(() => {

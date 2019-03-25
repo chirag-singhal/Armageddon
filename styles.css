@@ -273,7 +273,7 @@ h2{
     height: 70vh;
 }
 .register {
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     height: 60vh;
 }
