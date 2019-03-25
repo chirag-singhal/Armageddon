@@ -40,10 +40,13 @@ html,body{
         margin-left: 2vw;
     }
     .name1 :nth-child(n){
-        margin-bottom: 1vh;
+        margin-bottom: 22px;
+    }
+    .name2 :nth-child(n){
+        margin-bottom: 22px;
     }
     .name :nth-child(n){
-        margin-bottom: 0.9vh;
+        margin-top: 13px;
     }
     select{
         margin-top: 0;
@@ -152,7 +155,7 @@ select{
     font-size: 1vw;
     text-align: center;
     border-color: white;
-    padding: 3px 15px;
+    padding: 5px 15px;
     margin-right: 1vw;
     cursor: pointer;
 }
@@ -162,25 +165,13 @@ select{
     border: 3px solid;
     width: 7vw;
     float: left;
-    height: 2.5vh;
+    height: 2.4vh;
     font-size: 1vw;
     text-align: center;
     border-color: white;
-    padding: 3px 15px;
+    padding: 5px 15px;
     margin-right: 1vw;
     cursor: pointer;
-}
-.circle{
-    height: 100vh;
-    width: 50vw;
-    background: url("svg/853.png");
-    background-size: cover;
-    position: absolute;
-    top: 0vh;
-    display: block;
-    right: -24vw;
-    transform-origin: 100% 65%;
-    /* animation: spin 120s infinite linear; */
 }
 .home {
     width: 100vw;
@@ -245,6 +236,7 @@ h2{
 }
 .gameinfo{
     display: flex;
+    margin-left: 5vw;
 }
 .name{
     display: flex;
@@ -447,17 +439,19 @@ h5 {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        width: 35vw;
-        font-size: 2vh;
-        /* justify-content: space-between; */
+        width: 36vw;
     }
     .bitsian div .field .name :nth-child(n), .bitsian div .field .name1 :nth-child(n){
         margin-top: -3vh;
         margin-right: -6vw;
     }
+    #inp{
+        margin-bottom: 20px;
+    }
     .name1 :nth-child(n)
     {
-        margin-bottom: 2vh;
+        margin-bottom: 26px;
+        font-size: 16px;
         padding-left: 4vw;
     }
     .name{
@@ -487,10 +481,10 @@ h5 {
         border-radius: 22px / 20px;
         border: 3px solid;
         float: left;
-        height: 11px;
+        height: 15px;
         text-align: center;
         border-color: white;
-        padding: 3px 3px;
+        padding: 3px 4px;
         margin-right: 1vw;
         cursor: pointer;
         width: 22vw;
@@ -728,12 +722,12 @@ h5 {
     }
     input{
         width: 30vw;
-        margin-bottom: 10px;
+        margin-bottom: 25px;
     }
     select{
         height: 3vh;
         margin-top: -7px;
-        margin-bottom: 10px;
+        margin-bottom: 23px;
         padding: 0;
     }
     .contacts p{
