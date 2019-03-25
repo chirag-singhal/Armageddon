@@ -40,13 +40,13 @@ html,body{
         margin-left: 2vw;
     }
     .name1 :nth-child(n){
-        margin-bottom: 22px;
+        margin-bottom: 20px;
     }
     .name2 :nth-child(n){
         margin-bottom: 22px;
     }
     .name :nth-child(n){
-        margin-top: 13px;
+        margin-top: 15px;
     }
     select{
         margin-top: 0;

@@ -221,45 +221,50 @@ var regist = {};
 var order = [];
 var team_name, game_id, game_name;
 function gameinfo(){
-	var gameinfo = document.getElementsByClassName('gameinfo')[0];
-	var members = document.getElementsByClassName('members')[0];
-	gameinfo.style.animation = "closeRegContainer 0.5s ease 1 forwards";
-	document.getElementById('submits').style.animation = "closeRegContainer 0.5s ease 1 forwards";
-	// var info = new XMLHttpRequest();
-	// info.setRequestHeader('Content-Type: application/json');
-	// info.onreadystatechange = function() {
-	// 	if (this.readyState == 4 && this.status == 200) {
-	// 	 games = JSON.parse(this.responseText);
-	// 	}
-	//   };
-	// info.open("GET", "/get_games", true);
-	// info.send();
-	games = games.games;
 	team_name = document.getElementsByClassName('value')[0].value;
 	game_name = document.getElementsByClassName('value')[1].value; 
-	console.log(game_name);
-	games.forEach(element => {
-		if(game_name == element.name){
-			game_id = element.id;
-			games = element;
-			// break;
-			console.log(games);
-		}
-	});
-	regist["team_name"] = team_name;
-	regist["game_id"] = game_id;
-	console.log(regist);
-	setTimeout(() => {
-		gameinfo.style.display = "none";
-		document.getElementById('submits').style.display = "none";
-	}, 400);
-	setTimeout(() => {
-		members.style.display = "block";
-		var max = document.getElementById('max');
-		max.innerHTML += "5 )"
-		// max.innerHTML += games.no_of_participants+ " )";
-		members.style.animation = "openRegContainer 0.5s ease 1 forwards";
-	}, 500);
+	if ( team_name.trim().length != 0 && game_name != "Select"){
+		console.log("Accept");
+		console.log(team_name.trim().length);
+		console.log(game_name);
+		games = games.games;
+		var gameinfo = document.getElementsByClassName('gameinfo')[0];
+		var members = document.getElementsByClassName('members')[0];
+		gameinfo.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+		document.getElementById('submits').style.animation = "closeRegContainer 0.5s ease 1 forwards";
+		// var info = new XMLHttpRequest();
+		// info.setRequestHeader('Content-Type: application/json');
+		// info.onreadystatechange = function() {
+		// 	if (this.readyState == 4 && this.status == 200) {
+		// 	 games = JSON.parse(this.responseText);
+		// 	}
+		//   };
+		// info.open("GET", "/get_games", true);
+		// info.send();
+		console.log(game_name);
+		games.forEach(element => {
+			if(game_name == element.name){
+				game_id = element.id;
+				games = element;
+				// break;
+				console.log(games);
+			}
+		});
+		regist["team_name"] = team_name;
+		regist["game_id"] = game_id;
+		console.log(regist);
+		setTimeout(() => {
+			gameinfo.style.display = "none";
+			document.getElementById('submits').style.display = "none";
+		}, 400);
+		setTimeout(() => {
+			members.style.display = "block";
+			var max = document.getElementById('max');
+			max.innerHTML += "5 )"
+			// max.innerHTML += games.no_of_participants+ " )";
+			members.style.animation = "openRegContainer 0.5s ease 1 forwards";
+		}, 500);
+	}
 }
 
 var x=0;
@@ -498,9 +503,9 @@ function removeMember(){
 function register(){
 	if(x == games.no_of_participants)
 	{
+		var check = 1;
 		var members = document.getElementsByClassName('members')[0];
 		var thanks = document.getElementsByClassName('thanks')[0];
-		members.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 		var bitsian = document.getElementsByClassName('bitsians');
 		var non_bitsian_names = document.getElementsByClassName('non_names');
 		var non_bitsian_emails = document.getElementsByClassName('nb_emails');
@@ -508,6 +513,10 @@ function register(){
 		var non_bitsian_yos = document.getElementsByClassName('nb_yos');
 		for(let i = 0; i < bitsian.length; i++){
 			var bitsian_member = {};
+			if(bitsian[i].value.trim().length == 0)
+			{
+				check = 0;
+			}
 			bitsian_member['email_id'] = bitsian[i].value;
 			regist['team_members_bitsians'].push(bitsian_member);
 		}
@@ -516,23 +525,31 @@ function register(){
 		{
 			console.log(j);
 			var non_bitsian_member = {};	
+			if( non_bitsian_names[j].value.trim().length == 0 || non_bitsian_emails[j].value.trim().length == 0 || non_bitsian_gender[j].value == 'Select' || non_bitsian_yos[j].value == 'Select'){
+				check = 0;
+			}
 			non_bitsian_member['name'] = non_bitsian_names[j].value;
 			non_bitsian_member['email_id'] = non_bitsian_emails[j].value;
 			non_bitsian_member['gender'] = non_bitsian_gender[j].value;
 			non_bitsian_member['year_of_study'] = non_bitsian_yos[j].value;
 			regist['team_members_non_bitsians'].push(non_bitsian_member);
 		}
-		console.log(regist);
-		// var register = new XMLHttpRequest();
-		// register.setRequestHeader('Content-Type: application/json');
-		// register.open("POST", "/arma/register_team", true);
-		// register.send(team);
-		setTimeout(() => {
-			members.style.display = "none";
-		}, 400);
-		setTimeout(() => {
-			thanks.style.display = "block";
-			thanks.style.animation = "openRegContainer 0.5s ease 1 forwards";
-		}, 500);
+		if(check)
+		{
+
+			members.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+			console.log(regist);
+			// var register = new XMLHttpRequest();
+			// register.setRequestHeader('Content-Type: application/json');
+			// register.open("POST", "/arma/register_team", true);
+			// register.send(JSON.stringify(team));
+			setTimeout(() => {
+				members.style.display = "none";
+			}, 400);
+			setTimeout(() => {
+				thanks.style.display = "block";
+				thanks.style.animation = "openRegContainer 0.5s ease 1 forwards";
+			}, 500);
+		}
 	}
 }
