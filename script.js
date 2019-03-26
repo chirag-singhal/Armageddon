@@ -228,6 +228,12 @@ function gameinfo(){
 		console.log(team_name.trim().length);
 		console.log(game_name);
 		games = games.games;
+		var thanks = document.getElementsByClassName('thanks')[0];
+		var message = document.getElementById('message');
+		thanks.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+		setTimeout(() => {
+			
+		}, 400);
 		var gameinfo = document.getElementsByClassName('gameinfo')[0];
 		var members = document.getElementsByClassName('members')[0];
 		gameinfo.style.animation = "closeRegContainer 0.5s ease 1 forwards";
@@ -240,7 +246,7 @@ function gameinfo(){
 			 console.log(games);
 			}
 		  };
-		info.open("GET", "https://bits-apogee.org/2019/arma/get_games", false);
+		info.open("GET", "http://test.bits-apogee.org/2019/arma/get_games", false);
 		info.setRequestHeader('Content-Type','application/json');
 		info.send();
 		console.log(game_name);
@@ -259,6 +265,8 @@ function gameinfo(){
 		console.log(regist);
 		setTimeout(() => {
 			gameinfo.style.display = "none";
+			thanks.style.display = 'none';
+			message.innerHTML = '';
 			document.getElementById('submits').style.display = "none";
 		}, 400);
 		setTimeout(() => {
@@ -268,6 +276,13 @@ function gameinfo(){
 			max.innerHTML += games.no_of_participants+ " )";
 			members.style.animation = "openRegContainer 0.5s ease 1 forwards";
 		}, 500);
+	}
+	else{
+		var thanks = document.getElementsByClassName('thanks')[0];
+		var message = document.getElementById('message');
+		thanks.style.display = 'flex';
+		message.innerHTML = 'Please fill all the fields';
+		thanks.style.animation = "openRegContainer 0.5s ease 1 forwards";
 	}
 }
 
@@ -543,7 +558,6 @@ function register(){
 		if(check)
 		{
 
-			members.style.animation = "closeRegContainer 0.5s ease 1 forwards";
 			console.log(regist);
 			var register = new XMLHttpRequest();
 			register.onreadystatechange =function(){
@@ -551,18 +565,35 @@ function register(){
 					var message = JSON.parse(register.responseText);
 					console.log(message);
 					document.getElementById('message').innerHTML = message.message;
+					setTimeout(() => {
+						thanks.style.display = "flex";
+						thanks.style.animation = "openRegContainer 0.5s ease 1 forwards";
+					}, 500);
+				}
+				else if (register.status == 200){
+					members.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+					setTimeout(() => {
+						members.style.display = "none";
+					}, 400);
 				}
 			}
-			register.open('POST', "https://bits-apogee.org/2019/arma/register_team", false);
+			register.open('POST', "http://test.bits-apogee.org/2019/arma/register_team", false);
 			register.setRequestHeader('Content-Type','application/json');
 			register.send(JSON.stringify(regist));
-			setTimeout(() => {
-				members.style.display = "none";
-			}, 400);
-			setTimeout(() => {
-				thanks.style.display = "block";
-				thanks.style.animation = "openRegContainer 0.5s ease 1 forwards";
-			}, 500);
 		}
+		else{
+			var thanks = document.getElementsByClassName('thanks')[0];
+			var message = document.getElementById('message');
+			message.innerHTML = 'Please fill all the fields';
+			thanks.style.display = "flex";
+			thanks.style.animation = "openRegContainer 0.5s ease 1 forwards";
+		}
+	}
+	else{
+		var thanks = document.getElementsByClassName('thanks')[0];
+		var message = document.getElementById('message');
+		message.innerHTML = 'Less number of team members';
+		thanks.style.display = "flex";
+		thanks.style.animation = "openRegContainer 0.5s ease 1 forwards";
 	}
 }
