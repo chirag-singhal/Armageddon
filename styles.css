@@ -28,12 +28,13 @@ html,body{
     flex-direction: column;
     position: relative;
 }
-@media all and (min-width: 1400px){
+@media all and (min-width: 1024px){
     .bitsian, .non_bitsian{
         margin-left: 5vw;
     }
     .name1{
         width: 20vw;
+        align-items: center;
     }
     .bitsian div .field .name :nth-child(n), .bitsian div .field .name1 :nth-child(n){
         margin-top: -3vh;
@@ -42,13 +43,20 @@ html,body{
         margin-left: 2vw;
     }
     .name1 :nth-child(n){
-        margin-bottom: 20px;
+        display: flex;
+        height: 27px;
+        margin: 0;
+        margin-bottom: 24px;
     }
     .name2 :nth-child(n){
-        margin-bottom: 22px;
+        margin-bottom: 20px;
     }
     .name :nth-child(n){
         margin-top: 15px;
+        display: flex;
+        margin: 0;
+        margin-bottom: 20px;
+        height: 27px;
     }
     select{
         margin-top: 0;
@@ -154,7 +162,8 @@ select{
     border: 3px solid;
     width: 9vw;
     float: left;
-    font-size: 1vw;
+    height: 1.4vw;
+    font-size: 1.2vw;
     text-align: center;
     border-color: white;
     padding: 5px 15px;
@@ -167,8 +176,8 @@ select{
     border: 3px solid;
     width: 7vw;
     float: left;
-    height: 2.4vh;
-    font-size: 1vw;
+    height: 1.8vw;
+    font-size: 1.4vw;
     text-align: center;
     border-color: white;
     padding: 5px 15px;
@@ -298,7 +307,7 @@ form{
     font-size: 1.5vw;
 }
 input{
-    height: 2vh;
+    /* height: 2vh; */
     font-family: 'TradeGothicLT', sans-serif;
 }
 .games p, .about p, .rules p, .register form {
@@ -428,6 +437,33 @@ h5 {
         margin-left: 0;
         margin-bottom: 2vh;
     }
+    .name1 :nth-child(n) {
+        margin-bottom: 26px;
+        font-size: 13px;
+        padding-left: 4vw;
+        /* margin-bottom: 26px; */
+        /* font-size: 16px; */
+        display: flex;
+        height: 27px;
+        /* padding-left: 4vw; */
+        /* align-items: center; */
+        justify-content: center;
+    }
+    .name :nth-child(n) {
+        margin-top: 15px;
+        display: flex;
+        margin: 0;
+        margin-bottom: 30px;
+        height: 19px;
+    }
+    #inp{
+        margin-bottom: 27px;
+        height: 15px;
+    }
+    .name2 :nth-child(n) {
+        margin-bottom: 24px;
+        height: 18px;
+    }
     #regist{
         display: inline;
         width: 40vw;
@@ -443,19 +479,17 @@ h5 {
         display: flex;
         flex-direction: column;
         align-items: flex-end;
-        width: 36vw;
+        width: 37vw;
     }
     .bitsian div .field .name :nth-child(n), .bitsian div .field .name1 :nth-child(n){
         margin-top: -3vh;
         margin-right: -6vw;
     }
-    #inp{
-        margin-bottom: 20px;
-    }
     .name1 :nth-child(n)
     {
         margin-bottom: 26px;
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: 600;
         padding-left: 4vw;
     }
     .name{
@@ -500,10 +534,11 @@ h5 {
         font-size: 3.5vw;
     }
     .submit{
-         width: 25vw;
+        width: 25vw;
         margin-bottom: 4vh;
         color: white;
-        font-size: 3vw;
+        font-size: 4vw;
+        height: 5vw;
         margin-left: 0;
         padding: 0.5vh 0.5vw;
         border: 2px solid white;
@@ -643,9 +678,24 @@ h5 {
     }
 }
 
-@media all and (max-width:1450px){
+@media all and (max-width:1450px) and (min-width:1024px){
     .rules p, .games p, .about p, .register form {
         font-size: 2.8vh;
+    }
+    .name1 :nth-child(n){
+        margin-bottom: 21px;
+        font-size: 1.5vw;
+        padding-left: 4vw;    
+    }
+    .name2 :nth-child(n){
+        margin-bottom: 22px;
+    }
+    .name :nth-child(n){
+        margin-top: 15px;
+        display: flex;
+        margin: 0;
+        margin-bottom: 20px;
+        height: 27px;
     }
     .contacts p{
         font-size: 3.2vh;
@@ -683,7 +733,7 @@ h5 {
     }
 }
 
-@media all and (max-width: 1024px) and (max-aspect-ratio: 13/9){
+@media all and (max-width: 1024px) and (orientation:portrait){
     .cross{
         height: 20px;
         width: 20px;
@@ -806,7 +856,7 @@ h5 {
         opacity: 0;
     }
 }
-@media screen and (max-width: 900px) and (min-width:500px) and (min-aspect-ratio: 13/9){
+@media screen and (max-width: 900px) and (min-width:500px) and (orientation:landscape){
     .home{
         width: 100vw;
         height: 100vh;
@@ -814,6 +864,22 @@ h5 {
         justify-content: center;
         margin-top: 15vh;
         z-index: 7;
+    }
+    .name1 :nth-child(n){
+        display: flex;
+        height: 27px;
+        margin: 0;
+        margin-bottom: 24px;
+    }
+    .name2 :nth-child(n){
+        margin-bottom: 22px;
+    }
+    .name :nth-child(n){
+        margin-top: 15px;
+        display: flex;
+        margin: 0;
+        margin-bottom: 20px;
+        height: 27px;
     }
     .nav {
         justify-content: flex-end;
