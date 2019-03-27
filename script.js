@@ -549,19 +549,22 @@ function register(){
 		var non_bitsian_gender = document.getElementsByClassName('nb_gender');
 		var non_bitsian_yos = document.getElementsByClassName('nb_yos');
 			regist['team_members_bitsians'] = [];
-			var bitsian_member = [];
+			// var bitsian_member = [];
 			for(let i = 0; i < emails.length; i++){
 			if(emails[i].value.trim().length == 0 || phone[i].value.trim().length == 0)
 			{
 				check = 0;
 			}
 			var bitsian_member = {};
+			console.log(emails.length);
 			bitsian_member['email_id'] = emails[i].value;
 			bitsian_member['phone'] = phone[i].value;
+			console.log(bitsian_member);
 			regist['team_members_bitsians'].push(bitsian_member);
+			console.log(regist);
 
 		}
-		regist['team_members_bitsians'] = bitsian_member;
+		// regist['team_members_bitsians'] = bitsian_member;
 		console.log(non_bitsian_names.length);
 		regist['team_members_non_bitsians'] = [];
 		for(let j = 0; j < non_bitsian_names.length; j++)
@@ -576,6 +579,7 @@ function register(){
 			non_bitsian_member['gender'] = non_bitsian_gender[j].value;
 			non_bitsian_member['year_of_study'] = non_bitsian_yos[j].value;
 			non_bitsian_member['phone'] = non_conatact[j].value;
+			console.log(bitsian_member);
 			regist['team_members_non_bitsians'].push(non_bitsian_member);
 		}
 		if(check)
@@ -599,7 +603,8 @@ function register(){
 					var message = document.getElementById('message');
 					thanks.style.display = "flex";
 					message.innerHTML = 'Thank you for registering !!';
-					members.style.animation = "openRegContainer 0.5s ease 1 forwards";
+					members.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+					thanks.style.animation = "openRegContainer 0.5s ease 1 forwards";
 					setTimeout(() => {
 						members.style.display = "none";
 					}, 400);

@@ -340,10 +340,17 @@ input{
     color: white;
     text-decoration: none;
 }
-.contacts > p > a {
+.contacts > p > span > a {
     text-decoration: none;
     color: white;
     cursor: pointer;
+}
+.contacts p span{
+    font-size: 3vh;
+}
+.contacts p span a{
+    text-decoration: none;
+    color: white;
 }
 .contacts > p {
     font-size: 3.4vh;
@@ -854,6 +861,9 @@ h5 {
     }
     .contacts p{
         font-size: 3vh;
+    }
+    .contacts p span{
+        font-size: 2.5vh;
     }
     .logo{
         margin: 2vh 10vw;
