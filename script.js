@@ -247,7 +247,7 @@ function gameinfo(){
 			 console.log(games);
 			}
 		  };
-		info.open("GET", "http://test.bits-apogee.org/2019/arma/get_games", false);
+		info.open("GET", "https://bits-apogee.org/2019/arma/get_games", false);
 		info.setRequestHeader('Content-Type','application/json');
 		info.send();
 		console.log(game_name);
@@ -605,7 +605,7 @@ function register(){
 					}, 400);
 				}
 			}
-			register.open('POST', "http://test.bits-apogee.org/2019/arma/register_team", true);
+			register.open('POST', "https://bits-apogee.org/2019/arma/register_team", true);
 			register.setRequestHeader('Content-Type','application/json');
 			register.send(JSON.stringify(regist));
 		}
