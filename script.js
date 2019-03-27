@@ -242,6 +242,7 @@ function gameinfo(){
 		info.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 			 games = JSON.parse(this.responseText);
+			 message.innerHTML = '';
 			 games = games.games;
 			 console.log(games);
 			}
@@ -273,7 +274,7 @@ function gameinfo(){
 			members.style.display = "block";
 			var max = document.getElementById('max');
 			// max.innerHTML += "5 )"
-			max.innerHTML += games.no_of_participants+ " )";
+			max.innerHTML = "Members ( Required " +games.no_of_participants+ " )";
 			members.style.animation = "openRegContainer 0.5s ease 1 forwards";
 		}, 500);
 	}
@@ -313,26 +314,34 @@ function addMember(){
 			// child.classList.add('name');
 			child.innerHTML += "<h2>- Member "+x+"</h2>";
 			child.innerHTML += "&emsp;";
-			// child.appendChild(document.createElement("br"));
-			var div3 = document.createElement('div');
-			var div  = document.createElement('div');
-			var div1  = document.createElement('div');
-			div3.classList.add('field');
-			div.classList.add('name1');
-			div1.classList.add('name');
-			var div2 = document.createElement('div');
-			div2.appendChild(document.createTextNode("Email "));
+			var div = document.createElement('div');
+			div.classList.add('name');
+			var div2 = document.createElement('label');
 			div2.innerHTML += "&emsp;";
+			div2.innerHTML += " Email";
+			// div2.innerHTML += "&emsp;";
 			var txtBox = document.createElement("input");
-			txtBox.blur();
-			txtBox.classList.add('bitsians');
-			txtBox.setAttribute("type", "text");
+			// txtBox.blur();
+			txtBox.classList.add('emails');
 			// txtBox.required = true;
+			txtBox.setAttribute("type", "email");
 			div.appendChild(div2);
-			div1.appendChild(txtBox);
-			div3.appendChild(div);
-			div3.appendChild(div1);
-			child.appendChild(div3);
+			div.appendChild(txtBox);
+			child.appendChild(div);
+			var div = document.createElement('div');
+			div.classList.add('name');
+			var div2 = document.createElement('label');
+			div2.innerHTML += "&emsp;";
+			div2.innerHTML += " Phone No";
+			// div2.innerHTML += "&emsp;";
+			var txtBox = document.createElement("input");
+			// txtBox.blur();
+			txtBox.classList.add('contact');
+			// txtBox.required = true;
+			txtBox.setAttribute("type", "number");
+			div.appendChild(div2);
+			div.appendChild(txtBox);
+			child.appendChild(div);
 			parent.appendChild(child)
 			parent.appendChild(document.createElement("br"));
 		}
@@ -361,44 +370,40 @@ function addNonBitsianMember(){
 			// child.classList.add('name');
 			child.innerHTML += "<h2>- Member "+x+"</h2>";
 			// child.appendChild(document.createElement("br"));
-			var div3 = document.createElement('div');
-			var div  = document.createElement('div');
-			var div1  = document.createElement('div');
-			div3.classList.add('field');
-			div.classList.add('name1');
-			div1.classList.add('name');
-			var div2 = document.createElement('div');
+			var div = document.createElement('div');
+			div.classList.add('name');
+			var div2 = document.createElement('label');
 			div2.innerHTML += "&emsp;";
-			div2.appendChild(document.createTextNode("Name "));
+			div2.innerHTML += " Name";
 			// div2.innerHTML += "&emsp;";
 			var txtBox = document.createElement("input");
-			txtBox.blur();
+			// txtBox.blur();
 			txtBox.classList.add('non_names');
 			// txtBox.required = true;
 			txtBox.setAttribute("type", "text");
 			div.appendChild(div2);
-			div1.appendChild(txtBox);
-			// div.appendChild(document.createElement("br"));
-			// child.appendChild(div);
-			// var div  = document.createElement('div');
-			var div2 = document.createElement('div');
+			div.appendChild(txtBox);
+			child.appendChild(div);
+			var div = document.createElement('div');
+			div.classList.add('name');
+			var div2 = document.createElement('label');
 			div2.innerHTML += "&emsp;";
-			div2.appendChild(document.createTextNode("Email "));
+			div2.innerHTML += " Email";
 			// div2.innerHTML += "&emsp;";
 			var txtBox = document.createElement("input");
-			txtBox.blur();
+			// txtBox.blur();
 			txtBox.classList.add('nb_emails');
-			txtBox.setAttribute("type", "text");
 			// txtBox.required = true;
+			txtBox.setAttribute("type", "email");
 			div.appendChild(div2);
-			div1.appendChild(txtBox);
-			// div.appendChild(document.createElement("br"));
-			// child.appendChild(div);
-			var div2  = document.createElement('div');
+			div.appendChild(txtBox);
+			child.appendChild(div);
+			var div = document.createElement('div');
+			div.classList.add('name');
+			var div2 = document.createElement('label');
 			div2.innerHTML += "&emsp;";
-			div2.appendChild(document.createTextNode("Gender "));
+			div2.innerHTML += " Gender";
 			// div2.innerHTML += "&emsp;";
-			var div4 = document.createElement('div');
 			var select = document.createElement("select");
 			select.classList.add('nb_gender');
 			// select.required = true;
@@ -415,15 +420,14 @@ function addNonBitsianMember(){
 			select.appendChild(option1);
 			select.appendChild(option2);
 			div.appendChild(div2);
-			div4.appendChild(select);
-			div1.appendChild(div4);
-			// div.appendChild(document.createElement("br"));
-			// child.appendChild(div);
-			var div2  = document.createElement('div');
+			div.appendChild(select);
+			child.appendChild(div);
+			var div = document.createElement('div');
+			div.classList.add('name');
+			var div2 = document.createElement('label');
 			div2.innerHTML += "&emsp;";
-			div2.appendChild(document.createTextNode("Year Of Study "));
+			div2.innerHTML += " Year of Study";
 			// div2.innerHTML += "&emsp;";
-			var div4 = document.createElement('div');
 			var select = document.createElement("select");
 			select.classList.add('nb_yos');
 			// select.required = true;
@@ -451,13 +455,23 @@ function addNonBitsianMember(){
 			select.appendChild(option3);
 			select.appendChild(option4);
 			select.appendChild(option5);
-			div4.appendChild(select);
-			div1.appendChild(div4);
 			div.appendChild(div2);
-			div3.appendChild(div);
-			div3.appendChild(div1);
-			child.appendChild(div3);
-			// child.appendChild(div1);
+			div.appendChild(select);
+			child.appendChild(div);
+			var div = document.createElement('div');
+			div.classList.add('name');
+			var div2 = document.createElement('label');
+			div2.innerHTML += "&emsp;";
+			div2.innerHTML += " Phone No";
+			// div2.innerHTML += "&emsp;";
+			var txtBox = document.createElement("input");
+			// txtBox.blur();
+			txtBox.classList.add('non_contact');
+			// txtBox.required = true;
+			txtBox.setAttribute("type", "number");
+			div.appendChild(div2);
+			div.appendChild(txtBox);
+			child.appendChild(div);
 			parent.appendChild(child);
 			parent.appendChild(document.createElement("br"));
 		}
@@ -518,7 +532,8 @@ function removeMember(){
 		console.log(x);
 	}
 }
-
+var submit = document.getElementsByClassName('submit')[0];
+submit.addEventListener('click', gameinfo);
 function register(){
 	if(x == games.no_of_participants)
 	{
@@ -526,18 +541,25 @@ function register(){
 		var members = document.getElementsByClassName('members')[0];
 		var thanks = document.getElementsByClassName('thanks')[0];
 		var bitsian = document.getElementsByClassName('bitsians');
+		var phone = document.getElementsByClassName('contact');
+		var emails = document.getElementsByClassName('emails');
+		var non_conatact = document.getElementsByClassName('non_contact');
 		var non_bitsian_names = document.getElementsByClassName('non_names');
 		var non_bitsian_emails = document.getElementsByClassName('nb_emails');
 		var non_bitsian_gender = document.getElementsByClassName('nb_gender');
 		var non_bitsian_yos = document.getElementsByClassName('nb_yos');
-			// regist['team_members_bitsians'] = [];
+			regist['team_members_bitsians'] = [];
 			var bitsian_member = [];
-			for(let i = 0; i < bitsian.length; i++){
-			if(bitsian[i].value.trim().length == 0)
+			for(let i = 0; i < emails.length; i++){
+			if(emails[i].value.trim().length == 0 || phone[i].value.trim().length == 0)
 			{
 				check = 0;
 			}
-			bitsian_member[i] = bitsian[i].value;
+			var bitsian_member = {};
+			bitsian_member['email_id'] = emails[i].value;
+			bitsian_member['phone'] = phone[i].value;
+			regist['team_members_bitsians'].push(bitsian_member);
+
 		}
 		regist['team_members_bitsians'] = bitsian_member;
 		console.log(non_bitsian_names.length);
@@ -546,13 +568,14 @@ function register(){
 		{
 			console.log(j);
 			var non_bitsian_member = {};	
-			if( non_bitsian_names[j].value.trim().length == 0 || non_bitsian_emails[j].value.trim().length == 0 || non_bitsian_gender[j].value == 'Select' || non_bitsian_yos[j].value == 'Select'){
+			if( non_bitsian_names[j].value.trim().length == 0 || non_bitsian_emails[j].value.trim().length == 0 || non_bitsian_gender[j].value == 'Select' || non_bitsian_yos[j].value == 'Select' || non_conatact[j].value.trim().length == 0){
 				check = 0;
 			}
 			non_bitsian_member['name'] = non_bitsian_names[j].value;
 			non_bitsian_member['email_id'] = non_bitsian_emails[j].value;
 			non_bitsian_member['gender'] = non_bitsian_gender[j].value;
 			non_bitsian_member['year_of_study'] = non_bitsian_yos[j].value;
+			non_bitsian_member['phone'] = non_conatact[j].value;
 			regist['team_members_non_bitsians'].push(non_bitsian_member);
 		}
 		if(check)
@@ -562,22 +585,27 @@ function register(){
 			var register = new XMLHttpRequest();
 			register.onreadystatechange =function(){
 				if(register.status != 200){
-					var message = JSON.parse(register.responseText);
-					console.log(message);
+					var message = JSON.parse(register.responseText)
+					console.log(message.message);
 					document.getElementById('message').innerHTML = message.message;
 					setTimeout(() => {
+						var thanks = document.getElementsByClassName('thanks')[0];
 						thanks.style.display = "flex";
 						thanks.style.animation = "openRegContainer 0.5s ease 1 forwards";
 					}, 500);
 				}
 				else if (register.status == 200){
-					members.style.animation = "closeRegContainer 0.5s ease 1 forwards";
+					var thanks = document.getElementsByClassName('thanks')[0];
+					var message = document.getElementById('message');
+					thanks.style.display = "flex";
+					message.innerHTML = 'Thank you for registering !!';
+					members.style.animation = "openRegContainer 0.5s ease 1 forwards";
 					setTimeout(() => {
 						members.style.display = "none";
 					}, 400);
 				}
 			}
-			register.open('POST', "http://test.bits-apogee.org/2019/arma/register_team", false);
+			register.open('POST', "http://test.bits-apogee.org/2019/arma/register_team", true);
 			register.setRequestHeader('Content-Type','application/json');
 			register.send(JSON.stringify(regist));
 		}

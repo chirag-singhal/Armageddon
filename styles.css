@@ -4,6 +4,7 @@ html,body{
     overflow: hidden;
     font-family: 'TradeGothicLT';
     color: white;
+    font-weight: 600;
     -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
 }
 ::-webkit-scrollbar { 
@@ -204,7 +205,10 @@ select{
     z-index: 7;
 }
 .rules p a{
-    color: #ff870e;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2.7vh;
 }
 .problem{
     position: absolute;
@@ -247,15 +251,14 @@ h2{
 }
 .gameinfo{
     display: flex;
-    margin-left: 5vw;
+    flex-direction: column;
 }
 .name{
     display: flex;
-    flex-direction: column;
-    /* height: 15vh; */
-    width: 20vw;
-    align-items: flex-end;
-    /* justify-content: space-between; */
+    align-items: center;
+    margin-left: 5vw;
+    width: 30vw;
+    justify-content: space-between;
 }
 .field{
     display: flex;
@@ -315,6 +318,19 @@ input{
     font-family: 'TradeGothicLT', sans-serif;
     color: #ffffff;
 }
+.games p, .contacts p{
+    font-size: 2.8vh;
+    font-weight: 600;
+    margin-top: 14vh;
+}
+.games p span, .contacts p{
+    font-size: 4vh;
+    font-weight: bold;
+}
+.games p span a{
+    color: white;
+    text-decoration: none;
+}
 .contacts > p > a {
     text-decoration: none;
     color: white;
@@ -325,7 +341,7 @@ input{
     font-family: 'TradeGothicLT';
     color: white;
     text-align: right;
-    margin-top: -2vh;
+    /* margin-top: -2vh; */
 }
 h4 {
     font-size: 2vh;
@@ -426,6 +442,11 @@ h5 {
         padding: 0 12vw;
         text-align: center;
     }
+    .games span a{
+        color: white;
+        margin-left: -2vw;
+        text-decoration: none;
+    }
     .members h2{
         margin-left: 6vw;
         font-size: 4.5vw;
@@ -494,10 +515,11 @@ h5 {
     }
     .name{
         display: flex;
-        width: 37vw;
-        margin-left: 3vw;
-        padding-left: 4vw;
-        align-items: flex-start;
+        width: 67vw;
+        /* margin-left: 3vw; */
+        flex-direction: row;
+        /* padding-left: 5vw; */
+        justify-content: space-between;
     }
     .center{
         width: 80vw;
@@ -613,6 +635,11 @@ h5 {
     .rules p, .games p, .about p, .register form {
         padding: 0 3vw;
     }
+    .games p span{
+        font-size: 5.8vw;
+        margin-right: 50vw;
+        font-weight: bold;
+    }
     .register form{
         padding: 0;
     }
@@ -681,6 +708,7 @@ h5 {
 @media all and (max-width:1450px) and (min-width:1024px){
     .rules p, .games p, .about p, .register form {
         font-size: 2.8vh;
+        margin-top: 14vh;
     }
     .name1 :nth-child(n){
         margin-bottom: 21px;
@@ -694,11 +722,12 @@ h5 {
         margin-top: 15px;
         display: flex;
         margin: 0;
-        margin-bottom: 20px;
+        margin-bottom: 28px;
         height: 27px;
     }
     .contacts p{
         font-size: 3.2vh;
+        margin-top: 14vh;
     }
     .links{
         font-size: 1.3rem;
@@ -764,11 +793,20 @@ h5 {
         transition-timing-function: cubic-bezier(.06,.54,.26,.9);
     }
     .rules p, .games p, .about p, .contacts p{
-        font-size: 1.9vh;
+        font-size: 2.2vh;
         height: 50vh;
         margin-top: 2.5vh;
         padding: 0 5vw;
         text-align: center;
+    }
+    .games p{
+        padding: 0 10vw;
+        text-align: left;
+    }
+    .rules p{
+        text-align: left;
+        padding: 0 12vw;
+        font-size: 2.5vh;
     }
     form{
         width: 76vw;
@@ -793,7 +831,7 @@ h5 {
         margin-top: -2.5vh;
     }
     .contacts p{
-        font-size: 2.4vh;
+        font-size: 3vh;
     }
     .logo{
         margin: 2vh 10vw;
@@ -946,6 +984,7 @@ h5 {
         height: 25px;
         line-height: 25px;
         color: #fff;
+        font-weight: bold;
         padding: 3vh;
     }
     .links :nth-child(2){
@@ -984,4 +1023,11 @@ h5 {
         border: none;
         padding: 3vh;
     }
+}
+
+.nav-links:nth-child(4){
+    display: none;
+}
+.rules{
+    display: none;
 }
