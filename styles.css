@@ -33,7 +33,7 @@ html,body{
     color: white;
 }
 .file:hover{
-    color: skyblue;
+    color: blue;
 }
 @media all and (min-width: 1024px){
     .bitsian, .non_bitsian{
@@ -58,6 +58,9 @@ html,body{
     .name2 :nth-child(n){
         margin-bottom: 20px;
     }
+    .thanks{
+        font-size: 2vw;
+    }
     .name :nth-child(n){
         margin-top: 15px;
         display: flex;
@@ -70,8 +73,7 @@ html,body{
     }
 }
 .members, .thanks{
-    display: none;
-    opacity: 0;
+    margin-top: 15vh;
 }
 .thanks p{
     text-align: center;
@@ -108,7 +110,8 @@ select{
     width: 90px;
     background-color: white;
     margin-left: 10vw;
-}
+}display: none;
+opacity: 0;
 .logo{
     width: 256px;
     height: 44px;

@@ -533,7 +533,7 @@ function removeMember(){
 	}
 }
 var submit = document.getElementsByClassName('submit')[0];
-submit.addEventListener('click', gameinfo);
+// submit.addEventListener('click', gameinfo);
 function register(){
 	if(x == games.no_of_participants)
 	{
